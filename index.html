@@ -5,685 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Promosi STIT Al-Ihsan Baleendah</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-dark: #8B6914;
-    --green: #1B4332;
-    --green-mid: #2D6A4F;
-    --green-light: #40916C;
-    --cream: #FDF8EE;
-    --cream-dark: #F0E6CC;
-    --white: #FFFFFF;
-  }
-
-  body {
-    background: #0f0f0f;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    padding: 40px 20px;
-  }
-
-  h1.section-title {
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    text-align: center;
-    opacity: 0.7;
-  }
-
-  /* ========= INSTAGRAM POST ========= */
-  .ig-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .ig-post {
-    width: 540px;
-    height: 540px;
-    position: relative;
-    overflow: hidden;
-    background: var(--green);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-  }
-
-  /* Geometric Islamic pattern background */
-  .ig-post::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-      repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,168,76,0.04) 20px, rgba(201,168,76,0.04) 21px),
-      repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(201,168,76,0.04) 20px, rgba(201,168,76,0.04) 21px);
-    z-index: 1;
-  }
-
-  /* Gold top band */
-  .ig-top-band {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
-    z-index: 10;
-  }
-
-  /* Decorative arch */
-  .ig-arch {
-    position: absolute;
-    top: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 320px;
-    height: 260px;
-    border: 2px solid rgba(201,168,76,0.25);
-    border-radius: 50% 50% 0 0;
-    z-index: 2;
-  }
-
-  .ig-arch-inner {
-    position: absolute;
-    top: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 280px;
-    height: 230px;
-    border: 1px solid rgba(201,168,76,0.15);
-    border-radius: 50% 50% 0 0;
-    z-index: 2;
-  }
-
-  /* Corner ornaments */
-  .ig-corner {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    z-index: 5;
-  }
-  .ig-corner svg { width: 100%; height: 100%; }
-  .ig-corner.tl { top: 12px; left: 12px; }
-  .ig-corner.tr { top: 12px; right: 12px; transform: scaleX(-1); }
-  .ig-corner.bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
-  .ig-corner.br { bottom: 12px; right: 12px; transform: scale(-1); }
-
-  .ig-content {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    text-align: center;
-  }
-
-  .ig-logo-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-
-  .ig-logo-circle {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    margin-bottom: 8px;
-    box-shadow: 0 0 20px rgba(201,168,76,0.4);
-  }
-
-  .ig-institute-name {
-    font-family: 'Amiri', serif;
-    color: var(--gold-light);
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-  }
-
-  .ig-arabic {
-    font-family: 'Amiri', serif;
-    color: var(--gold);
-    font-size: 22px;
-    margin-bottom: 4px;
-    text-shadow: 0 0 20px rgba(201,168,76,0.3);
-  }
-
-  .ig-divider {
-    width: 120px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 14px auto;
-  }
-
-  .ig-headline {
-    font-family: 'Playfair Display', serif;
-    color: var(--cream);
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    opacity: 0.85;
-  }
-
-  .ig-main-title {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 36px;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 4px;
-    text-shadow: 0 4px 20px rgba(201,168,76,0.3);
-  }
-
-  .ig-subtitle {
-    font-family: 'Playfair Display', serif;
-    color: var(--cream);
-    font-size: 18px;
-    font-weight: 400;
-    font-style: italic;
-    margin-bottom: 20px;
-    opacity: 0.85;
-  }
-
-  .ig-prodi-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .ig-prodi-tag {
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 2px;
-  }
-
-  .ig-tagline {
-    font-family: 'Poppins', sans-serif;
-    color: var(--cream);
-    font-size: 12px;
-    font-weight: 300;
-    opacity: 0.75;
-    letter-spacing: 0.5px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  .ig-cta {
-    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-    color: var(--green);
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 12px 28px;
-    border-radius: 2px;
-    box-shadow: 0 4px 20px rgba(201,168,76,0.35);
-  }
-
-  .ig-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
-    z-index: 10;
-  }
-
-  /* ========= BROSUR ========= */
-  .brosur-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .brosur {
-    width: 680px;
-    min-height: 960px;
-    background: var(--cream);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Brosur header */
-  .brosur-header {
-    background: var(--green);
-    padding: 40px 48px 36px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .brosur-header::after {
-    content: '';
-    position: absolute;
-    bottom: -30px;
-    left: 0; right: 0;
-    height: 60px;
-    background: var(--green);
-    clip-path: ellipse(55% 100% at 50% 0%);
-  }
-
-  .brosur-header-pattern {
-    position: absolute;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(201,168,76,0.05) 15px, rgba(201,168,76,0.05) 16px),
-      repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(201,168,76,0.05) 15px, rgba(201,168,76,0.05) 16px);
-  }
-
-  .brosur-header-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .brosur-logo {
-    width: 76px;
-    height: 76px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    flex-shrink: 0;
-    box-shadow: 0 0 24px rgba(201,168,76,0.4);
-  }
-
-  .brosur-header-text {}
-  .brosur-header-text h1 {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 22px;
-    font-weight: 900;
-    line-height: 1.2;
-  }
-  .brosur-header-text p {
-    font-family: 'Poppins', sans-serif;
-    color: rgba(255,255,255,0.75);
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
-
-  .brosur-gold-line {
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
-    position: absolute;
-    bottom: 0; left: 0;
-  }
-
-  /* Hero section */
-  .brosur-hero {
-    background: linear-gradient(160deg, var(--green) 0%, var(--green-mid) 60%, var(--green-light) 100%);
-    padding: 56px 48px 48px;
-    text-align: center;
-    position: relative;
-  }
-
-  .brosur-hero-arabic {
-    font-family: 'Amiri', serif;
-    color: var(--gold);
-    font-size: 28px;
-    margin-bottom: 8px;
-    text-shadow: 0 0 20px rgba(201,168,76,0.3);
-  }
-
-  .brosur-hero-small {
-    font-family: 'Poppins', sans-serif;
-    color: rgba(255,255,255,0.6);
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .brosur-hero-title {
-    font-family: 'Playfair Display', serif;
-    color: var(--cream);
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-
-  .brosur-hero-title span {
-    color: var(--gold);
-  }
-
-  .brosur-hero-sub {
-    font-family: 'Poppins', sans-serif;
-    color: rgba(255,255,255,0.7);
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.7;
-    max-width: 420px;
-    margin: 0 auto 24px;
-  }
-
-  .brosur-divider {
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 0 auto 24px;
-  }
-
-  /* Prodi cards */
-  .brosur-prodi {
-    padding: 48px 48px 36px;
-    background: var(--cream);
-  }
-
-  .brosur-section-title {
-    font-family: 'Playfair Display', serif;
-    color: var(--green);
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 6px;
-  }
-
-  .brosur-section-sub {
-    font-family: 'Poppins', sans-serif;
-    color: var(--green-light);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .prodi-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .prodi-card {
-    background: var(--white);
-    border: 1px solid var(--cream-dark);
-    border-top: 3px solid var(--gold);
-    padding: 24px 20px;
-    position: relative;
-  }
-
-  .prodi-card-icon {
-    font-size: 28px;
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  .prodi-card h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--green);
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 6px;
-    line-height: 1.3;
-  }
-
-  .prodi-card .prodi-abbr {
-    font-family: 'Poppins', sans-serif;
-    color: var(--gold-dark);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .prodi-card p {
-    font-family: 'Poppins', sans-serif;
-    color: #555;
-    font-size: 11px;
-    line-height: 1.7;
-  }
-
-  /* Keunggulan */
-  .brosur-keunggulan {
-    padding: 36px 48px;
-    background: var(--green);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .brosur-keunggulan::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(201,168,76,0.04) 18px, rgba(201,168,76,0.04) 19px),
-      repeating-linear-gradient(-45deg, transparent, transparent 18px, rgba(201,168,76,0.04) 18px, rgba(201,168,76,0.04) 19px);
-  }
-
-  .brosur-keunggulan .brosur-section-title { color: var(--gold); }
-  .brosur-keunggulan .brosur-section-sub { color: rgba(255,255,255,0.5); margin-bottom: 24px; }
-
-  .keunggulan-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .keunggulan-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .keunggulan-icon {
-    width: 36px;
-    height: 36px;
-    background: rgba(201,168,76,0.15);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-
-  .keunggulan-text h4 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--gold-light);
-    font-size: 11px;
-    font-weight: 600;
-    margin-bottom: 2px;
-  }
-
-  .keunggulan-text p {
-    font-family: 'Poppins', sans-serif;
-    color: rgba(255,255,255,0.6);
-    font-size: 10px;
-    line-height: 1.5;
-  }
-
-  /* Footer kontak */
-  .brosur-footer {
-    background: var(--cream-dark);
-    padding: 32px 48px;
-    border-top: 3px solid var(--gold);
-  }
-
-  .brosur-footer-title {
-    font-family: 'Playfair Display', serif;
-    color: var(--green);
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .kontak-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
-
-  .kontak-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .kontak-item .k-icon {
-    font-size: 18px;
-    width: 36px;
-    height: 36px;
-    background: var(--green);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .kontak-item .k-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    color: #444;
-    line-height: 1.5;
-  }
-
-  .kontak-item .k-text strong {
-    display: block;
-    color: var(--green);
-    font-size: 11px;
-    font-weight: 600;
-    margin-bottom: 1px;
-  }
-
-  .brosur-footer-cta {
-    background: linear-gradient(135deg, var(--green), var(--green-mid));
-    color: var(--gold);
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    padding: 16px;
-    letter-spacing: 1px;
-    border-left: 4px solid var(--gold);
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- LABEL -->
- <h1 class="section-title">Epul Saepuloh</h1></n>
-<h1 class="section-title">Format Instagram</h1>
-
-<!-- IG POST -->
-<div class="ig-wrapper">
-  <div class="ig-post">
-    <div class="ig-top-band"></div>
-    <div class="ig-arch"></div>
-    <div class="ig-arch-inner"></div>
-
-    <!-- Corner ornaments -->
-    <div class="ig-corner tl">
-      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5 L30 5 L5 30 Z" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M5 5 L55 5" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <path d="M5 5 L5 55" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <circle cx="5" cy="5" r="3" fill="#C9A84C" opacity="0.7"/>
-        <path d="M15 5 L5 15" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
-        <path d="M25 5 L5 25" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
-      </svg>
-    </div>
-    <div class="ig-corner tr">
-      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5 L30 5 L5 30 Z" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M5 5 L55 5" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <path d="M5 5 L5 55" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <circle cx="5" cy="5" r="3" fill="#C9A84C" opacity="0.7"/>
-      </svg>
-    </div>
-    <div class="ig-corner bl">
-      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5 L30 5 L5 30 Z" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M5 5 L55 5" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <path d="M5 5 L5 55" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <circle cx="5" cy="5" r="3" fill="#C9A84C" opacity="0.7"/>
-      </svg>
-    </div>
-    <div class="ig-corner br">
-      <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5 L30 5 L5 30 Z" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        <path d="M5 5 L55 5" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <path d="M5 5 L5 55" stroke="#C9A84C" stroke-width="1.2" opacity="0.5"/>
-        <circle cx="5" cy="5" r="3" fill="#C9A84C" opacity="0.7"/>
-      </svg>
-    </div>
-
-    <div class="ig-content">
-      <div class="ig-logo-area">
-        <div class="ig-logo-circle">🕌</div>
-        <span class="ig-institute-name">STIT Al-Ihsan · Baleendah</span>
-      </div>
-
-      <div class="ig-arabic">الإحسان</div>
-      <div class="ig-divider"></div>
-
-      <div class="ig-headline">Penerimaan Mahasiswa Baru</div>
-      <div class="ig-main-title">Tahun Akademik</div>
-      <div class="ig-subtitle">2026 / 2027</div>
-
-      <div class="ig-prodi-row">
-        <span class="ig-prodi-tag">S1 MPI</span>
-        <span class="ig-prodi-tag">S1 PGMI</span>
-      </div>
-
-      <div class="ig-tagline">
-        Cetak Generasi Pendidik Islam<br>yang Profesional & Berakhlak Mulia
-      </div>
-
-      <a href="https://stitalihsan.ac.id/" style="text-decoration: none;">
-    <div class="ig-cta">Daftar Sekarang</div>
-</a>
-    </div>
-
-    <div class="ig-bottom"></div>
-  </div>
-  <p style="color:#555; font-size:11px; font-family:'Poppins',sans-serif;">Akun Instagram: @stitalihsan.official</p>
-</div>
-
-<!-- LABEL -->
-<h1 class="section-title">Format Brosur Digital</h1>
 
 <!-- BROSUR -->
 <div class="brosur-wrapper">
@@ -703,13 +27,36 @@
     </div>
 
     <!-- Hero -->
+     
     <div class="brosur-hero">
-      <div class="brosur-hero-arabic">الإحسان للتربية الإسلامية</div>
-      <div class="brosur-hero-small">Penerimaan Mahasiswa Baru</div>
-      <div class="brosur-hero-title">Jadilah <span>Pendidik Islam</span><br>yang Dibutuhkan Bangsa</div>
-      <div class="brosur-divider"></div>
-      <div class="brosur-hero-sub">
-        STIT Al-Ihsan Baleendah hadir untuk mencetak tenaga pendidik Islam yang profesional, berintegritas, dan siap membangun peradaban melalui pendidikan berkualitas.
+      <div class="brosur-hero-background">
+      <svg xmlns="http://www.w3.org/2000/svg" width="371" height="357" fill="none" class="circle1">
+          <circle cx="185.5" cy="171.5" r="185.5" fill="url(#hero-circle-one_svg__a)" fill-opacity="0.7" opacity="0.74"></circle>
+          <defs>
+            <radialGradient id="hero-circle-one_svg__a" cx="0" cy="0" r="1" gradientTransform="matrix(228.79653 301.94558 -343.28268 260.11935 -22.899 31.81)" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#cbbb8c"></stop>
+              <stop offset="1" stop-color="#FFFFFF"></stop>
+            </radialGradient>
+          </defs>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="371" height="371" fill="none" class="circle2">
+          <circle cx="185.5" cy="185.5" r="185.5" fill="url(#hero-circle-two_svg__a)" fill-opacity="0.7" opacity="0.74"></circle>
+          <defs>
+            <radialGradient id="hero-circle-two_svg__a" cx="0" cy="0" r="1" gradientTransform="matrix(228.79653 301.94558 -343.28268 260.11935 -22.899 45.81)" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E8C97A"></stop>
+              <stop offset="1" stop-color="#C9A84C"></stop>
+            </radialGradient>
+          </defs>
+        </svg>
+        </div>
+      <div style="position: relative;">
+        <div class="brosur-hero-arabic">الإحسان للتربية الإسلامية</div>
+        <div class="brosur-hero-small">Penerimaan Mahasiswa Baru</div>
+        <div class="brosur-hero-title">Jadilah <span>Pendidik Islam</span><br>yang Dibutuhkan Bangsa</div>
+        <div class="brosur-divider"></div>
+        <div class="brosur-hero-sub">
+          STIT Al-Ihsan Baleendah hadir untuk mencetak tenaga pendidik Islam yang profesional, berintegritas, dan siap membangun peradaban melalui pendidikan berkualitas.
+        </div>
       </div>
     </div>
 
@@ -718,22 +65,18 @@
       <div class="brosur-section-title">Program Studi</div>
       <div class="brosur-section-sub">Jenjang Sarjana (S1)</div>
       <div class="prodi-cards">
-        <a href="https://mpi.stitalihsan.ac.id/" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="prodi-card">
-        <span class="prodi-card-icon">📚</span>
-        <span class="prodi-abbr">MPI</span>
-        <h3>Manajemen Pendidikan Islam</h3>
-        <p>Disiapkan untuk menjadi manajer, kepala sekolah...</p>
-    </div>
-</a>
-<a href="https://pgmi.stitalihsan.ac.id/public/" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="prodi-card">
-        <span class="prodi-card-icon">🏫</span>
-        <span class="prodi-abbr">PGMI</span>
-        <h3>Pendidikan Guru Madrasah Ibtidaiyah</h3>
-        <p>Disiapkan untuk menjadi guru MI/SD Islam...</p>
-    </div>
-</a>
+        <div class="prodi-card">
+          <span class="prodi-card-icon">📚</span>
+          <span class="prodi-abbr">MPI</span>
+          <h3>Manajemen Pendidikan Islam</h3>
+          <p>Disiapkan untuk menjadi manajer, kepala sekolah, dan pemimpin lembaga pendidikan Islam yang kompeten.</p>
+        </div>
+        <div class="prodi-card">
+          <span class="prodi-card-icon">🏫</span>
+          <span class="prodi-abbr">PGMI</span>
+          <h3>Pendidikan Guru Madrasah Ibtidaiyah</h3>
+          <p>Disiapkan untuk menjadi guru MI/SD Islam yang profesional, kreatif, dan berkarakter Islami.</p>
+        </div>
       </div>
     </div>
 
@@ -795,13 +138,14 @@
           <div class="k-icon">📍</div>
           <div class="k-text">
             <strong>Alamat</strong>
-            Jl. Adipati Agung No. 40<br>Baleendah, Bandung
+            <a href="https://share.google/CDYS8Sno3plDiNQtW" target="_blank">Jl. Adipati Agung No. 40<br>Baleendah, Bandung</a>
           </div>
         </div>
         <div class="kontak-item">
           <div class="k-icon">💬</div>
           <div class="k-text">
             <strong>WhatsApp</strong>
+            <a href="https://wa.me/"></a>
             0857-2137-0768 (Bu Mutiara)<br>0838-2928-1441 (Bu Novi)
           </div>
         </div>
@@ -809,26 +153,22 @@
           <div class="k-icon">📷</div>
           <div class="k-text">
             <strong>Instagram</strong>
-            <a href="https://www.instagram.com/stitalihsan.official/" target="_blank" style="text-decoration: none; color: inherit;">
-            @stitalihsan.official
-            </a>
+            <a href="https://www.instagram.com/stitalihsan.official/" target="_blank">https://www.instagram.com/stitalihsan.official/</a>
           </div>
         </div>
         <div class="kontak-item">
           <div class="k-icon">🌐</div>
-            <div class="k-text">
-           <strong>Website</strong>
-       <a href="https://stitalihsan.ac.id" target="_blank" style="text-decoration: none; color: inherit;">
-        stitalihsan.ac.id
-    </a>
-</div>
+          <div class="k-text">
+            <strong>Website</strong>
+            <a href="https://stitalihsan.ac.id/" target="_blank">https://stitalihsan.ac.id/</a>
           </div>
         </div>
       </div>
       <div class="brosur-footer-cta">
-       <a href="https://stitalihsan.ac.id/" style="text-decoration: none;">
-    <div class="ig-cta">Daftar Sekarang</div>
-</a>
+        <a href="https://stitalihsan.ac.id/" target="_blank">
+          ✨ Daftarkan Dirimu Sekarang — Masa Depan Pendidik Islam Dimulai di Sini ✨
+        </a>
+      </div>
     </div>
 
   </div>
